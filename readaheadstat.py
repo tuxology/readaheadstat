@@ -1,5 +1,13 @@
 #!/usr/bin/python
 # @lint-avoid-python-3-compatibility-imports
+#
+# readaheadstat     Count unused pages in read ahead cache with age
+#                   For Linux, uses bpftrace, eBPF
+#
+# Copyright (c) 2020 Suchakra Sharma <suchakra@gmail.com>
+# Licensed under the Apache License, Version 2.0 (the "License")
+#
+# 20-Aug-2020   Suchakra Sharma   Created this.
 
 from __future__ import print_function
 from bcc import BPF

@@ -7,9 +7,11 @@ metric in understanding how moden architectures affect such metrics in the syste
 
 ## `readaheadstat.bt`
 
-This tool requires `bpftrace` to be installed on the system
+This tool requires [`bpftrace`](https://github.com/iovisor/bpftrace) to be installed on the system
 
 ```
+$ sudo ./readaheadstat.bt
+
 Attaching 5 probes...
 ^C
 Readahead unused pages: 15816
@@ -34,3 +36,28 @@ Readahead used page age (ms):
 ```
 
 ## `readaheadstat.py`
+
+This tool requires [BCC](https://github.com/iovisor/bcc) to be installed on your system
+
+```
+$ sudo ./readaheadstat.py
+
+Tracing... Hit Ctrl-C to end.
+^C
+Read-ahead unused pages: 3630
+Histogram of read-ahead used page age (ms)
+==========================================
+     ms                  : count     distribution
+         0 -> 1          : 136      |*****************                       |
+         2 -> 3          : 0        |                                        |
+         4 -> 7          : 0        |                                        |
+         8 -> 15         : 1        |                                        |
+        16 -> 31         : 0        |                                        |
+        32 -> 63         : 0        |                                        |
+        64 -> 127        : 0        |                                        |
+       128 -> 255        : 0        |                                        |
+       256 -> 511        : 43       |*****                                   |
+       512 -> 1023       : 0        |                                        |
+      1024 -> 2047       : 312      |****************************************|
+```
+
