@@ -1,12 +1,4 @@
-#!/usr/local/bin/bpftrace
-
-# readaheadstat     Count unused pages in read ahead cache with age
-#                   For Linux, uses bpftrace, eBPF
-#
-# Copyright (c) 2020 Hani Nemati <hani.nemati@gmail.com>
-# Licensed under the Apache License, Version 2.0 (the "License")
-#
-# 20-Aug-2020   Hani Nemati   Created this.
+#!/usr/bin/bpftrace
 
 kprobe:__do_page_cache_readahead    { @in_readahead[tid] = 1; }
 kretprobe:__do_page_cache_readahead { @in_readahead[tid] = 0; }
