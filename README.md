@@ -1,5 +1,7 @@
 # Read Ahead Cache Stats
 
+> :warning: The `readaheadstat.py` tool was originally showcased in "BPF Performance Tools" book by Brendan Gregg. It has now been upstreamed in the official [BCC repository](https://github.com/iovisor/bcc/blob/master/tools/readahead.py) and will be maintained there. you can still refer to the influxdb version here to see how it works.
+
 This tool shows the performance of the read ahead mechanism in your FS, specifically
 higlighting ununsed pages in the cache and how long they have remained there. Cache 
 misses in read-ahead cache reduces the performance of a FS call and can be an important
